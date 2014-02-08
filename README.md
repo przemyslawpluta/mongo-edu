@@ -2,6 +2,7 @@ mongo-edu
 =========
 
 [![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)
+[![Dependency Status](https://gemnasium.com/przemyslawpluta/mongo-edu.png)](https://gemnasium.com/przemyslawpluta/mongo-edu)
 
 Select and download video courses from [education.mongodb.com](https://education.mongodb.com)
 

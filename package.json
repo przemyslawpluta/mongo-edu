@@ -24,7 +24,6 @@
     "education",
     "edu"
   ],
-  "analyze": false,
   "license": "MIT",
   "dependencies": {
     "request": "~2.33.0",

@@ -1,6 +1,8 @@
 mongo-edu
 =========
 
+[![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)
+
 Select and download video courses from [education.mongodb.com](https://education.mongodb.com)
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/med.gif)

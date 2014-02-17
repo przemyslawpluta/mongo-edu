@@ -18,14 +18,13 @@ py 2.7 or 3.x
 
 ##Installation
 
-```js
+```
 npm install mongo-edu -g
 ```
 
-
 ##Usage
 
-```js
+```
 mongo-edu -u [user name] -d [download path] --ncc [no check certificate]
 
 Options:

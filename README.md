@@ -10,11 +10,18 @@ Select and download video courses from [education.mongodb.com](https://education
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me.gif)
 
+##Prerequisite
+
+```
+py 2.7 or 3.x
+```
+
 ##Installation
 
 ```js
 npm install mongo-edu -g
 ```
+
 
 ##Usage
 

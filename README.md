@@ -8,7 +8,7 @@ mongo-edu
 
 Select and download video courses from [education.mongodb.com](https://education.mongodb.com)
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/med.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me.gif)
 
 ##Installation
 

@@ -12,8 +12,9 @@ var mdbvideos = require('./lib/login'),
     colors = require('colors'),
     inquirer = require('inquirer'),
     argv = require('optimist')
-        .usage('Usage: $0 -u [user name] -d [download path]')
+        .usage('Usage: $0 -u [user name] -d [download path] --ncc [no check certificate]')
         .describe('d', 'download path').describe('u', 'email address')
+        .describe('ncc', 'no check certificate with py3.x').boolean('ncc')
         .demand('d').argv;
 
 exports.create = function start() {
@@ -74,7 +75,7 @@ exports.create = function start() {
 
                     mdbvideos.listVideos(answers, function get(err, data, pass) {
                         if (err !== null) { throw err; }
-                        if (!pass) { return videoHandler.details(data, showDetails); }
+                        if (!pass) { return videoHandler.details(data, argv, showDetails); }
                         showDetails(err, data);
                     });
 
@@ -88,7 +89,7 @@ exports.create = function start() {
                     check[0].choices = data;
 
                     return inquirer.prompt(check, function prompt(answers) {
-                        videoHandler.download(answers, data, argv);
+                        videoHandler.download(answers, data);
                     });
 
                 }

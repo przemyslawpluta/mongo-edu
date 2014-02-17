@@ -1,7 +1,7 @@
 mongo-edu
 =========
 
-[![NPM](https://nodei.co/npm/mongo-edu.png?mini=true)](https://nodei.co/npm/mongo-edu/)
+[![NPM](https://nodei.co/npm/mongo-edu.png?compact=true)](https://nodei.co/npm/mongo-edu/)
 
 [![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)
 [![Dependency Status](https://gemnasium.com/przemyslawpluta/mongo-edu.png)](https://gemnasium.com/przemyslawpluta/mongo-edu)

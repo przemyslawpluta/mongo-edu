@@ -1,7 +1,7 @@
 {
   "name": "mongo-edu",
   "preferGlobal": true,
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Przemyslaw Pluta <przemyslawplutadev@gmail.com> (http://przemyslawpluta.com)",
   "description": "Select and download video courses from education.mongodb.com",
   "main": "./mongo-edu",

@@ -6,9 +6,7 @@ mongo-edu
 [![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)
 [![Dependency Status](https://gemnasium.com/przemyslawpluta/mongo-edu.png)](https://gemnasium.com/przemyslawpluta/mongo-edu)
 
-Select and download video courses from [education.mongodb.com](https://education.mongodb.com)
-
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me.gif)
+Select and download videos and handouts from [education.mongodb.com](https://education.mongodb.com) courses
 
 ##Prerequisite
 
@@ -22,15 +20,31 @@ py 2.7 or 3.x
 npm install mongo-edu -g
 ```
 
+## Select and download
+
+### Videos
+
+As long as the video lists are present in the wiki pages you can download all videos listed on a page for any given week.
+
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/ev.gif)
+
+### Handouts
+
+`-h` As long as the handouts lists are present in the wiki pages you can download all handouts listed on a page for any given week.
+
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/eh.gif)
+
+
 ##Usage
 
 ```
-mongo-edu -u [user name] -d [download path] --ncc [no check certificate]
+mongo-edu -d [download path] -u [user name] -h [get handouts] --ncc [no check certificate]
 
 Options:
-  -d     download path                    [required]
+  -d     download path                             [required]
   -u     email address
-  --ncc  no check certificate py3.x
+  -h     switch from videos (default) to handouts
+  --ncc  no check certificate with py3.x
 ```
 
 ##License

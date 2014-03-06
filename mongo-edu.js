@@ -12,7 +12,7 @@ var mdbvideos = require('./lib/login'),
     colors = require('colors'),
     inquirer = require('inquirer'),
     argv = require('optimist')
-        .usage('Usage: $0 -u [user name] -d [download path] --ncc [no check certificate] -h [get handouts]')
+        .usage('Usage: $0 -d [download path] -u [user name] -h [get handouts] --ncc [no check certificate]')
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('ncc', 'no check certificate with py3.x').boolean('ncc')

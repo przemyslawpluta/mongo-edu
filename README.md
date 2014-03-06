@@ -20,6 +20,18 @@ py 2.7 or 3.x
 npm install mongo-edu -g
 ```
 
+##Usage
+
+```
+mongo-edu -d [download path] -u [user name] -h [get handouts] --ncc [no check certificate]
+
+Options:
+  -d     download path                             [required]
+  -u     email address
+  -h     switch from videos (default) to handouts
+  --ncc  no check certificate with py3.x
+```
+
 ## Select and download
 
 ### Videos
@@ -34,18 +46,6 @@ As long as the video lists are present in the wiki pages you can download all vi
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/eh.gif)
 
-
-##Usage
-
-```
-mongo-edu -d [download path] -u [user name] -h [get handouts] --ncc [no check certificate]
-
-Options:
-  -d     download path                             [required]
-  -u     email address
-  -h     switch from videos (default) to handouts
-  --ncc  no check certificate with py3.x
-```
 
 ##License
 MIT

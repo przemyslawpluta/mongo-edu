@@ -14,10 +14,13 @@ var mdbvideos = require('./lib/login'),
     argv = require('optimist')
         .usage('Usage: $0 -u [user name] -d [download path] --ncc [no check certificate]')
         .describe('d', 'download path').describe('u', 'email address')
+        .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('ncc', 'no check certificate with py3.x').boolean('ncc')
         .demand('d').argv;
 
 exports.create = function start() {
+
+    var lookFor = ((!argv.h)? 'Videos' : 'Handouts');
 
     validate.init(argv, function (err, profile) {
         if (err !== null) { throw err; }
@@ -52,7 +55,7 @@ exports.create = function start() {
             function currentList() {
                 inquirer.prompt(classes, function prompt(answers) {
 
-                    mdbvideos.getList(answers, function get(err, data) {
+                    mdbvideos.getList(answers, argv, function get(err, data) {
                         if (err !== null) { throw err; }
 
                         if (data.length) {
@@ -64,7 +67,8 @@ exports.create = function start() {
 
                         }
 
-                        return console.log('[' + 'i'.red + '] Unable to locate any lists in the wiki. Is course available?');
+                        return console.log('[' + 'i'.red + '] Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Is course available / ' +
+                            lookFor.toLowerCase() + ' list present in the wiki?');
                     });
 
                 });
@@ -84,8 +88,9 @@ exports.create = function start() {
 
             function showDetails(err, data) {
                 if (err !== null) { throw err; }
+
                 if (data.length) {
-                    check[0].message = 'Select From ' + (data.length - 2) + ' Videos. Download:';
+                    check[0].message = 'Select From ' + (data.length - 2) + ' ' + lookFor + '. Download:';
                     check[0].choices = data;
 
                     return inquirer.prompt(check, function prompt(answers) {
@@ -94,7 +99,7 @@ exports.create = function start() {
 
                 }
 
-                console.log('[' + 'i'.red + '] Could not locate any videos.'); process.exit(0);
+                console.log('[' + 'i'.red + '] Could not locate any ' + lookFor.toLowerCase() + '.'); process.exit(0);
             }
 
         });

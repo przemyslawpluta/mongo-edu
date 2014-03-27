@@ -42,7 +42,7 @@ As long as the video lists are present in the wiki pages you can download all vi
 
 ### Handouts
 
-`-h` As long as the handouts lists are present in the wiki pages you can download all handouts listed on a page for any given week.
+`-h` Download all available handouts present in the syllabus pages for any given week.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/eh.gif)
 

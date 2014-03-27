@@ -36,7 +36,7 @@ Options:
 
 ### Videos
 
-As long as the video lists are present in the `wiki` pages you can download all videos listed on a page for any given week.
+Download all available videos from lists present in the `wiki` pages for any given week.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos.gif)
 

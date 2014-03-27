@@ -36,13 +36,13 @@ Options:
 
 ### Videos
 
-As long as the video lists are present in the wiki pages you can download all videos listed on a page for any given week.
+As long as the video lists are present in the `wiki` pages you can download all videos listed on a page for any given week.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/ev.gif)
 
 ### Handouts
 
-`-h` Download all available handouts present in the syllabus pages for any given week.
+`-h` Download all available handouts present in the `syllabus` pages for any given week.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/eh.gif)
 

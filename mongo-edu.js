@@ -40,7 +40,7 @@ exports.create = function start() {
                     }
                 }];
 
-            mdbvideos.init(answers, function get(err, data) {
+            mdbvideos.init(answers, argv, function get(err, data) {
                 if (err !== null) { throw err; }
                 if (data.length) {
 
@@ -55,10 +55,12 @@ exports.create = function start() {
             function currentList() {
                 inquirer.prompt(classes, function prompt(answers) {
 
-                    mdbvideos.getList(answers, argv, function get(err, data) {
+                    mdbvideos.getList(answers, argv, function get(err, data, pass) {
                         if (err !== null) { throw err; }
 
                         if (data.length) {
+
+                            if (pass) { return showDetails(err, data); }
 
                             list[0].message = 'Found ' + data.length + ' List'+ ((data.length > 1)? 's' : '') + '. Select:';
                             list[0].choices = data;
@@ -94,7 +96,7 @@ exports.create = function start() {
                     check[0].choices = data;
 
                     return inquirer.prompt(check, function prompt(answers) {
-                        videoHandler.download(answers, data);
+                        videoHandler.download(answers, data, argv);
                     });
 
                 }

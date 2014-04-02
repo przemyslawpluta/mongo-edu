@@ -37,7 +37,7 @@ Options:
 
 ### Videos
 
-Download all available videos from lists present in the `wiki` pages for any given week.
+Download all available videos from lists present in the `wiki` pages for any given week. Add `--cc` to download closed captions with the videos.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos-update.gif)
 

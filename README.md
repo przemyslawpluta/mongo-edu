@@ -23,12 +23,13 @@ npm install mongo-edu -g
 ##Usage
 
 ```
-mongo-edu -d [download path] -u [user name] -h [get handouts] --ncc [no check certificate]
+mongo-edu -d [download path] -u [user name] -h [get handouts] --cc [get closed captions] --ncc [no check certificate]
 
 Options:
   -d     download path                             [required]
   -u     email address
   -h     switch from videos (default) to handouts
+  --cc   get closed captions
   --ncc  no check certificate with py3.x
 ```
 
@@ -38,13 +39,13 @@ Options:
 
 Download all available videos from lists present in the `wiki` pages for any given week.
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos-update.gif)
 
 ### Handouts
 
 `-h` Download all available handouts present in the `syllabus` pages for any given week.
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-handouts.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-handouts-update.gif)
 
 
 ##License

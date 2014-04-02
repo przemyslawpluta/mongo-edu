@@ -6,7 +6,7 @@ mongo-edu
 [![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)
 [![Dependency Status](https://gemnasium.com/przemyslawpluta/mongo-edu.png)](https://gemnasium.com/przemyslawpluta/mongo-edu)
 
-Select and download videos and handouts from [education.mongodb.com](https://education.mongodb.com) courses
+Select and download videos and handouts from [university.mongodb.com](https://university.mongodb.com) courses
 
 ##Prerequisite
 

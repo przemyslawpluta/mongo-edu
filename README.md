@@ -35,7 +35,7 @@ Options:
 
 ## Select and download
 
-### Videos
+### Videos and closed captions
 
 Download all available videos from lists present in the `wiki` pages for any given week. Add `--cc` to download closed captions with the videos.
 

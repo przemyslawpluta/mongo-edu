@@ -1,9 +1,9 @@
 {
   "name": "mongo-edu",
   "preferGlobal": true,
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Przemyslaw Pluta <przemyslawplutadev@gmail.com> (http://przemyslawpluta.com)",
-  "description": "Select and download videos and handouts from education.mongodb.com courses",
+  "description": "Select and download videos and handouts from university.mongodb.com courses",
   "main": "./mongo-edu",
   "scripts": {
     "start": "node ./bin/mongo-edu"
@@ -18,10 +18,13 @@
   "keywords": [
     "mongodb",
     "download",
+    "handouts",
+    "closed captions"
     "videos",
     "youtube",
     "course",
     "education",
+    "university",
     "edu"
   ],
   "license": "MIT",

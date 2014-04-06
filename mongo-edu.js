@@ -80,7 +80,7 @@ exports.create = function start() {
             function currentVideos() {
                 inquirer.prompt(list, function prompt(answers) {
 
-                    mdbvideos.listVideos(answers, function get(err, data, pass) {
+                    mdbvideos.listVideos(answers, argv, function get(err, data, pass) {
                         if (err !== null) { throw err; }
                         if (!pass) { return videoHandler.details(data, argv, showDetails); }
                         showDetails(err, data);

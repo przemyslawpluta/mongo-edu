@@ -21,6 +21,8 @@ var mdbvideos = require('./lib/login'),
 
 exports.create = function start() {
 
+    'use strict';
+
     var lookFor = ((!argv.h)? 'Videos' : 'Handouts');
 
     validate.init(argv, function (err, profile) {

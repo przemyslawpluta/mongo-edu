@@ -8,7 +8,7 @@ fs.unlink(target, function (err) {
 	'use strict';
   	if (err !== null) { return console.log(err.stack); }
 	mv(path.resolve(__dirname + '../' + '../.temp/youtube-dl.js'), target, function error(err) {
-	    if (err !== null) { console.log(err); }
+	    if (err) { console.log(err); }
 	});
 });
 

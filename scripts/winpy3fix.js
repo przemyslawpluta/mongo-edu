@@ -3,5 +3,5 @@ var mv = require('mv'),
 
 mv(path.resolve(__dirname + '../' + '../.temp/youtube-dl.js'), path.resolve(__dirname + '../' + '../node_modules/youtube-dl/lib/youtube-dl.js'), function error(err) {
     'use strict';
-    if (err !== null) { console.log(err.stack); }
+    if (err !== null) { console.log(err); }
 });

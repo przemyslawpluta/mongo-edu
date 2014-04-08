@@ -1,3 +1,11 @@
+/*
+ * mongo-edu
+ *
+ * Copyright (c) 2014 Przemyslaw Pluta
+ * Licensed under the MIT license.
+ * https://github.com/przemyslawpluta/mongo-edu/blob/master/LICENSE
+ */
+
 var mv = require('mv'),
     fs = require('fs'),
     path = require('path');

@@ -17,7 +17,7 @@ var mdbvideos = require('./lib/login'),
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('cc', 'get closed captions').boolean('cc')
         .describe('hq', 'get high quality videos').boolean('hq')
-        .describe('ncc', 'no check certificate for < py3.4.x').boolean('ncc')
+        .describe('ncc', 'no check certificate').boolean('ncc')
         .describe('uz', 'unzip file').boolean('uz')
         .demand('d').argv;
 

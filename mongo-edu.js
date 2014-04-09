@@ -12,11 +12,13 @@ var mdbvideos = require('./lib/login'),
     colors = require('colors'),
     inquirer = require('inquirer'),
     argv = require('optimist')
-        .usage('Usage: $0 -d [download path] -u [user name] -h [get handouts] --cc [get closed captions] --ncc [no check certificate]')
+        .usage('Usage: $0')
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('cc', 'get closed captions').boolean('cc')
-        .describe('ncc', 'no check certificate with py3.x').boolean('ncc')
+        .describe('hq', 'get high quality videos').boolean('hq')
+        .describe('ncc', 'no check certificate for < py3.4.x').boolean('ncc')
+        .describe('uz', 'unzip file').boolean('uz')
         .demand('d').argv;
 
 exports.create = function start() {

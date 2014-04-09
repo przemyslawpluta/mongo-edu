@@ -23,14 +23,16 @@ npm install mongo-edu -g
 ##Usage
 
 ```
-mongo-edu -d [download path] -u [user name] -h [get handouts] --cc [get closed captions] --ncc [no check certificate]
+$ mongo-edu --help
 
 Options:
   -d     download path                             [required]
   -u     email address
   -h     switch from videos (default) to handouts
   --cc   get closed captions
-  --ncc  no check certificate with py3.x
+  --hq   get high quality videos
+  --ncc  no check certificate for < py3.4.x
+  --uz   unzip file
 ```
 
 ## Select and download

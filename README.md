@@ -31,7 +31,7 @@ Options:
   -h     switch from videos (default) to handouts
   --cc   get closed captions
   --hq   get high quality videos
-  --ncc  no check certificate for < py3.4.x
+  --ncc  no check certificate for py3.x < py3.4.x
   --uz   unzip file
 ```
 
@@ -39,13 +39,13 @@ Options:
 
 ### Videos and closed captions
 
-Download all available videos from lists present in the `wiki` pages for any given week. Add `--cc` to download closed captions with the videos.
+Download all available videos from lists present in the `wiki` pages for any given week. Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos-update.gif)
 
 ### Handouts
 
-`-h` Download all available handouts present in the `syllabus` pages for any given week.
+Add `-h` to download all available handouts present in the `syllabus` pages for any given week and `--uz` to unzip files after the download.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-handouts-update.gif)
 

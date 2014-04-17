@@ -11,21 +11,23 @@ var mdbvideos = require('./lib/login'),
     validate = require('./lib/validate'),
     colors = require('colors'),
     inquirer = require('inquirer'),
-    argv = require('optimist')
-        .usage('Usage: $0')
+    optimist = require('optimist')
+        .usage('Usage: $0 [options]')
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('cc', 'get closed captions').boolean('cc')
         .describe('hq', 'get high quality videos').boolean('hq')
         .describe('ncc', 'no check certificate').boolean('ncc')
         .describe('uz', 'unzip file').boolean('uz')
-        .demand('d').argv;
+        .demand('d');
 
 exports.create = function start() {
 
     'use strict';
 
-    var lookFor = ((!argv.h)? 'Videos' : 'Handouts');
+    var argv = optimist.argv, lookFor = ((!argv.h)? 'Videos' : 'Handouts');
+
+    if (argv.help) { return optimist.showHelp(); }
 
     validate.init(argv, function (err, profile) {
         if (err !== null) { throw err; }

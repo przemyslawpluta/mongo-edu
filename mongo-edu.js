@@ -15,6 +15,8 @@ var mdbvideos = require('./lib/login'),
         .usage('Usage: $0 [options]')
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
+        .describe('cw', 'switch from wiki\'s video lists (default) to courseware').boolean('cw')
+        .describe('cwd', 'same as --cw and dumps list of videos to file in -d').boolean('cwd')
         .describe('cc', 'get closed captions').boolean('cc')
         .describe('hq', 'get high quality videos').boolean('hq')
         .describe('ncc', 'no check certificate').boolean('ncc')
@@ -36,7 +38,7 @@ exports.create = function start() {
 
     function run(profile) {
 
-        inquirer.prompt(profile, function promt(answers) {
+        inquirer.prompt(profile, function prompt(answers) {
 
             var list = [{ type: 'list', name: 'url', message: '', choices: [] }], classes = list,
 
@@ -49,6 +51,7 @@ exports.create = function start() {
 
             mdbvideos.init(answers, argv, function get(err, data) {
                 if (err !== null) { throw err; }
+
                 if (data.length) {
 
                     classes[0].message = 'Found ' + data.length + ' Course'+ ((data.length > 1)? 's' : '') + '. Select:';
@@ -74,16 +77,21 @@ exports.create = function start() {
 
                             return currentVideos();
 
+                        } else {
+                            if (pass) { return console.log('[' + 'i'.red + '] Looks like the course is not yet available or has already ended. ' +
+                                lookFor + ' list is not available.\n\nCheck the start/end date for selected course.\n'); }
                         }
 
-                        return console.log('[' + 'i'.red + '] Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Is course available / ' +
-                            lookFor.toLowerCase() + ' list present in the wiki?');
+                        return console.log('[' + 'i'.red + '] Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Is ' +
+                            lookFor.toLowerCase() + ' list present in the wiki?' +
+                            (lookFor === 'Videos') ? ' Try to add ' + '--cw'.green + ' to switch and search on courseware instead.' : '');
                     });
 
                 });
             }
 
             function currentVideos() {
+
                 inquirer.prompt(list, function prompt(answers) {
 
                     mdbvideos.listVideos(answers, argv, function get(err, data, pass) {

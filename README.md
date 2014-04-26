@@ -29,6 +29,8 @@ Options:
   -d     download path                             [required]
   -u     email address
   -h     switch from videos (default) to handouts
+  --cw   switch from wiki's video lists (default) to courseware
+  --cwd  same as --cw and dumps list of videos to file in -d
   --cc   get closed captions
   --hq   get high quality videos
   --ncc  no check certificate for py3.x < py3.4.x
@@ -39,7 +41,9 @@ Options:
 
 ### Videos and closed captions
 
-Download all available videos from lists present in the `wiki` pages for any given week. Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos.
+Download all available videos from lists present in the `wiki` pages for any given week. If there are no lists present in `wiki` add `--cw` to search through the main courseware pages.
+
+Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos-master.gif)
 

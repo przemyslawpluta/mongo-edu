@@ -29,7 +29,7 @@ Options:
   -d     download path                             [required]
   -u     email address
   -h     switch from videos (default) to handouts
-  --cw   switch from wiki's video lists (default) to courseware
+  --cw   switch from wiki video lists (default) to courseware
   --cwd  same as --cw and dumps list of videos to file in -d
   --cc   get closed captions
   --hq   get high quality videos

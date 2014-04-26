@@ -34,7 +34,7 @@ Options:
   --cc   get closed captions
   --hq   get high quality videos
   --ncc  no check certificate for py3.x < py3.4.x
-  --uz   unzip file
+  --uz   unzip handout files
 ```
 
 ## Select and download

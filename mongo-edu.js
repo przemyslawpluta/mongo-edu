@@ -20,7 +20,7 @@ var mdbvideos = require('./lib/login'),
         .describe('cc', 'get closed captions').boolean('cc')
         .describe('hq', 'get high quality videos').boolean('hq')
         .describe('ncc', 'no check certificate').boolean('ncc')
-        .describe('uz', 'unzip file').boolean('uz')
+        .describe('uz', 'unzip handout files').boolean('uz')
         .demand('d');
 
 exports.create = function start() {

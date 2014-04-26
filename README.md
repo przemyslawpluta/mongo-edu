@@ -45,13 +45,13 @@ Download all available videos from lists present in the `wiki` pages for any giv
 
 Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos.
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos-master.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos.gif)
 
 ### Handouts
 
 Add `-h` to download all available handouts present in the `syllabus` pages for any given week and `--uz` to unzip files after the download.
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-handouts-master.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-handouts.gif)
 
 
 ##License

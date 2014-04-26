@@ -41,7 +41,7 @@ Options:
 
 ### Videos and closed captions
 
-Download all available videos from lists present in the `wiki` pages for any given week. If there are no lists present in `wiki` add `--cw` to search through the main courseware pages.
+Download all available videos from lists present in the `wiki` pages for any given week. If no lists are present in `wiki` add `--cw` to search through the main courseware pages.
 
 Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos.
 

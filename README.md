@@ -20,6 +20,8 @@ py 2.7 or 3.x
 npm install mongo-edu -g
 ```
 
+or see [detailed installation guide](https://github.com/przemyslawpluta/mongo-edu/wiki/Installation) in the wiki pages
+
 ##Usage
 
 ```

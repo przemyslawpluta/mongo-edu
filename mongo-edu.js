@@ -9,6 +9,7 @@
 var mdbvideos = require('./lib/login'),
     videoHandler = require('./lib/videos'),
     validate = require('./lib/validate'),
+    path = require('path'),
     colors = require('colors'),
     inquirer = require('inquirer'),
     optimist = require('optimist')
@@ -27,9 +28,13 @@ exports.create = function start() {
 
     'use strict';
 
-    var argv = optimist.argv, lookFor = ((!argv.h)? 'Videos' : 'Handouts');
+    var argv = optimist.argv, lookFor = ((!argv.h)? 'Videos' : 'Handouts'), isWin = /^win/.test(process.platform), slash = (isWin) ? '\\' : '/';
 
     if (argv.help) { return optimist.showHelp(); }
+
+    argv.d = path.normalize(argv.d);
+
+    if (argv.d.substr(-1) !== slash) { argv.d += slash; }
 
     validate.init(argv, function (err, profile) {
         if (err !== null) { throw err; }

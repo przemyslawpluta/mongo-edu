@@ -22,6 +22,7 @@ var mdbvideos = require('./lib/login'),
         .describe('hq', 'get high quality videos').boolean('hq')
         .describe('ncc', 'no check certificate').boolean('ncc')
         .describe('uz', 'unzip handout files').boolean('uz')
+        .describe('co', 'dump course order list').boolean('co')
         .demand('d');
 
 exports.create = function start() {
@@ -116,9 +117,7 @@ exports.create = function start() {
                     check[0].choices = data;
 
                     return inquirer.prompt(check, function prompt(answers) {
-
                         videoHandler.download(answers, data, argv);
-
                     });
 
                 }

@@ -33,6 +33,7 @@ Options:
   -h     switch from videos (default) to handouts
   --cw   switch from wiki video lists (default) to courseware
   --cwd  same as --cw and dumps list of videos to file in -d
+  --co   dump course order list to file in -d
   --cc   get closed captions
   --hq   get high quality videos
   --ncc  no check certificate for py3.x < py3.4.x

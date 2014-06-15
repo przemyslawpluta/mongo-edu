@@ -77,7 +77,7 @@ exports.create = function start() {
 
                             if (pass) { return showDetails(err, data); }
 
-                            list[0].message = 'Found ' + data.length + ' List'+ ((data.length > 1)? 's' : '') + '. Select:';
+                            list[0].message = 'Found ' + data.length + ' List' + ((data.length > 1)? 's' : '') + '. Select:';
                             list[0].choices = data;
 
                             return currentVideos();
@@ -87,9 +87,9 @@ exports.create = function start() {
                                 lookFor + ' list is not available.\n\nCheck the start/end date for selected course.\n'); }
                         }
 
-                        return console.log('[' + 'i'.red + '] Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Is ' +
+                        return console.log('[' + 'i'.red + '] Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Are ' +
                             lookFor.toLowerCase() + ' list present in the wiki?' +
-                            (lookFor === 'Videos') ? ' Try to add ' + '--cw'.green + ' to switch and search on courseware instead.' : '');
+                            ((lookFor === 'Videos') ? ' Try to add ' + '--cw'.green + ' to switch and search on courseware instead.' : ''));
                     });
 
                 });
@@ -116,7 +116,9 @@ exports.create = function start() {
                     check[0].choices = data;
 
                     return inquirer.prompt(check, function prompt(answers) {
+
                         videoHandler.download(answers, data, argv);
+
                     });
 
                 }

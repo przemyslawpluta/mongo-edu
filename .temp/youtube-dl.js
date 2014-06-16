@@ -69,7 +69,7 @@ exports.download = function(urladdr, dest, args) {
   if (!isWin) {
     youtubedl = spawn(file, args, { cwd: dest });
   } else {
-    youtubedl = spawn('python', [file].concat(args), { cwd: dest });
+    youtubedl = spawn(process.env.PYTHON, [file].concat(args), { cwd: dest });
   }
 
   youtubedl.stdout.setEncoding('utf8');
@@ -158,7 +158,7 @@ function call(url, args, options, callback) {
 
   var opt = [file, args];
 
-  if (isWin) { opt = ['python', [file].concat(args)]; }
+  if (isWin) { opt = [process.env.PYTHON, [file].concat(args)]; }
 
   // Call youtube-dl.
   execFile(opt[0], opt[1], function(err, stdout, stderr) {

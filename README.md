@@ -31,6 +31,7 @@ Options:
   -d     download path                             [required]
   -u     email address
   -h     switch from videos (default) to handouts
+  --py   pass switch to point to Python
   --cw   switch from wiki video lists (default) to courseware
   --cwd  same as --cw and dumps list of videos to file in -d
   --co   dump course order list to file in -d

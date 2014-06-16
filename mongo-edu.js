@@ -17,7 +17,7 @@ var mdbvideos = require('./lib/login'),
         .usage('Usage: $0 [options]')
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
-        .describe('py', 'pass python').describe('py', 'python')
+        .describe('py', 'py switch').describe('py', 'switch to point to Python')
         .describe('cw', 'switch from wiki\'s video lists (default) to courseware').boolean('cw')
         .describe('cwd', 'same as --cw and dumps list of videos to file in -d').boolean('cwd')
         .describe('cc', 'get closed captions').boolean('cc')
@@ -39,7 +39,7 @@ exports.create = function start() {
 
     if (argv.d.substr(-1) !== slash) { argv.d += slash; }
 
-    validate.init(argv, function (err, profile) {
+    validate.init(argv, function init(err, profile) {
         if (err !== null) { throw err; }
 
         configure(argv, function conf(err) {

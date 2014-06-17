@@ -53,13 +53,13 @@ Download all available videos from lists present in the `wiki` pages for any giv
 
 Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos. Use with `--co` to sequence the video files in order of the wiki ( based on the order of the files present in the wiki lists ) or courseware ( when used with `--cw` preserves the courseware order ).
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/edu-videos.gif)
 
 ### Handouts
 
 Add `-h` to download all available handouts present in the `syllabus` pages for any given week and `--uz` to unzip files after the download.
 
-![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-handouts.gif)
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/edu-handouts.gif)
 
 
 ##License

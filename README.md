@@ -30,14 +30,18 @@ $ mongo-edu --help
 Options:
   -d     download path                             [required]
   -u     email address
-  -h     switch from videos (default) to handouts
   --py   pass switch to point to Python
+  --ncc  no check certificate for py3.x < py3.4.x
+
+Videos:
   --cw   switch from wiki video lists (default) to courseware
   --cwd  same as --cw and dumps list of videos to file in -d
-  --co   sequence video files in order of the course
+  --co   sequence video files in order of the courseware
   --cc   get closed captions
   --hq   get high quality videos
-  --ncc  no check certificate for py3.x < py3.4.x
+
+Handouts:
+  -h     switch from videos (default) to handouts
   --uz   unzip handout files
 ```
 
@@ -47,7 +51,7 @@ Options:
 
 Download all available videos from lists present in the `wiki` pages for any given week. If no lists are present in `wiki` add `--cw` to search through the main courseware pages.
 
-Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos.
+Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos. Use with `--co` to sequence the video files in order of the wiki ( based on the order of the files present in the wiki lists ) or courseware ( when used with `--cw` preserves the courseware order ).
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-videos.gif)
 

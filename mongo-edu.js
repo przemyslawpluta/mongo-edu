@@ -24,7 +24,7 @@ var mdbvideos = require('./lib/login'),
         .describe('hq', 'get high quality videos').boolean('hq')
         .describe('ncc', 'no check certificate').boolean('ncc')
         .describe('uz', 'unzip handout files').boolean('uz')
-        .describe('co', 'sequence video files in order of the course').boolean('co')
+        .describe('co', 'sequence video files in order of the courseware').boolean('co')
         .demand('d');
 
 exports.create = function start() {

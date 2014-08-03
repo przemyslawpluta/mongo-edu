@@ -45,7 +45,7 @@
     "rimraf": "~2.2.8",
     "unzip": "~0.1.9",
     "which": "~1.0.5",
-    "youtube-dl": "~1.5.8"
+    "youtube-dl": "~1.5.9"
   },
   "engines": {
     "node": ">= 0.8.x"

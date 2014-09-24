@@ -91,11 +91,11 @@ exports.create = function start() {
                             return currentVideos();
 
                         } else {
-                            if (pass) { return console.log('[' + 'i'.red + '] Looks like the course is not yet available or has already ended. ' +
+                            if (pass) { return console.log('i'.red + ' Looks like the course is not yet available or has already ended. ' +
                                 lookFor + ' list is not available.\n\nCheck the start/end date for selected course.\n'); }
                         }
 
-                        return console.log('[' + 'i'.red + '] Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Are ' +
+                        return console.log('i'.red + ' Unable to locate any ' + lookFor.toLowerCase() + ' lists in the wiki. Are ' +
                             lookFor.toLowerCase() + ' list present in the wiki?' +
                             ((lookFor === 'Videos') ? ' Try to add ' + '--cw'.green + ' to switch and search on courseware instead.' : ''));
                     });
@@ -129,7 +129,7 @@ exports.create = function start() {
 
                 }
 
-                console.log('[' + 'i'.red + '] Could not locate any ' + lookFor.toLowerCase() + '.'); process.exit(0);
+                console.log('i'.red + ' Could not locate any ' + lookFor.toLowerCase() + '.'); process.exit(0);
             }
 
         });

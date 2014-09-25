@@ -18,6 +18,7 @@ var mdbvideos = require('./lib/login'),
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('py', 'py switch').describe('py', 'switch to point to Python')
+        .describe('proxy', 'pass proxy').describe('proxy', 'proxy address')
         .describe('cw', 'switch from wiki\'s video lists (default) to courseware').boolean('cw')
         .describe('cwd', 'same as --cw and dumps list of videos to file in -d').boolean('cwd')
         .describe('cc', 'get closed captions').boolean('cc')
@@ -25,6 +26,7 @@ var mdbvideos = require('./lib/login'),
         .describe('ncc', 'no check certificate').boolean('ncc')
         .describe('uz', 'unzip handout files').boolean('uz')
         .describe('co', 'sequence video files in order of the courseware').boolean('co')
+        .describe('verbose', 'print debug information').boolean('verbose')
         .demand('d');
 
 exports.create = function start() {
@@ -38,6 +40,8 @@ exports.create = function start() {
     argv.d = path.normalize(argv.d);
 
     if (argv.d.substr(-1) !== slash) { argv.d += slash; }
+
+    if (argv.proxy) { console.log('i'.magenta + ' Proxy Video Download: '.bold + argv.proxy.green); }
 
     validate.init(argv, function init(err, profile) {
         if (err !== null) { throw err; }

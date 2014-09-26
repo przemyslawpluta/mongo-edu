@@ -13,7 +13,7 @@ var mdbvideos = require('./lib/login'),
     path = require('path'),
     colors = require('colors'),
     inquirer = require('inquirer'),
-    optimist = require('optimist')
+    yargs = require('yargs')
         .usage('Usage: $0 [options]')
         .describe('d', 'download path').describe('u', 'email address')
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
@@ -33,9 +33,9 @@ exports.create = function start() {
 
     'use strict';
 
-    var argv = optimist.argv, lookFor = ((!argv.h)? 'Videos' : 'Handouts'), isWin = /^win/.test(process.platform), slash = (isWin) ? '\\' : '/';
+    var argv = yargs.argv, lookFor = ((!argv.h)? 'Videos' : 'Handouts'), isWin = /^win/.test(process.platform), slash = (isWin) ? '\\' : '/';
 
-    if (argv.help) { return optimist.showHelp(); }
+    if (argv.help) { return yargs.showHelp(); }
 
     argv.d = path.normalize(argv.d);
 

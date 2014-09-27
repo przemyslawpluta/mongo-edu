@@ -30,7 +30,7 @@ var mdbvideos = require('./lib/login'),
         .describe('co', 'sequence video files in order of the courseware').boolean('co')
         .describe('verbose', 'print debug information').boolean('verbose')
         .example('$0 -d your_download_path', 'download videos from wiki')
-        .example('$0 -d your_download_path -u your_user_name --cw --hq --cc', 'download high quality videos from courseware with closed caltions')
+        .example('$0 -d your_download_path -u your_user_name --cw --hq --cc', 'download high quality videos from courseware with closed captions')
         .example('$0 -d your_download_path -h --uz', 'download and unzip handouts')
         .example('$0 -d your_download_path --cw --verbose', 'download videos from courseware and print debug info')
         .example('$0 -d your_download_path --cw --proxy http://proxy_ip_address:proxy_port_number', 'download videos from courseware via proxy tunnel')

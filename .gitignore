@@ -19,3 +19,4 @@ mongo-edu.wiki
 .DS_Store
 
 node_modules
+bin/*.json

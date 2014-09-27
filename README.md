@@ -46,7 +46,7 @@ Handouts:
   --uz        unzip handout files
 
 Proxy:
-  --proxy     pass proxy switch
+  --proxy     pass proxy switch for video download
   --test      use with --proxy to test if usable
 
 ```

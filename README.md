@@ -32,7 +32,6 @@ Options:
   -u          email address
   --py        pass switch to point to Python
   --ncc       no check certificate for py3.x < py3.4.x
-  --proxy     pass proxy switch
   --verbose   print debug info
 
 Videos:
@@ -45,6 +44,10 @@ Videos:
 Handouts:
   -h          switch from videos (default) to handouts
   --uz        unzip handout files
+
+Proxy:
+  --proxy     pass proxy switch
+  --test      use with --proxy to test if usable
 
 ```
 

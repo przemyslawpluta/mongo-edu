@@ -10,6 +10,7 @@ var mdbvideos = require('./lib/login'),
     videoHandler = require('./lib/videos'),
     validate = require('./lib/validate'),
     configure = require('./lib/configure'),
+    url = require('url'),
     path = require('path'),
     colors = require('colors'),
     inquirer = require('inquirer'),
@@ -19,6 +20,7 @@ var mdbvideos = require('./lib/login'),
         .describe('h', 'switch from videos (default) to handouts').boolean('h')
         .describe('py', 'py switch').describe('py', 'switch to point to Python')
         .describe('proxy', 'pass proxy').describe('proxy', 'proxy address')
+        .describe('test', 'proxy test').describe('test', 'use with --proxy to test if usable')
         .describe('cw', 'switch from wiki\'s video lists (default) to courseware').boolean('cw')
         .describe('cwd', 'same as --cw and dumps list of videos to file in -d').boolean('cwd')
         .describe('cc', 'get closed captions').boolean('cc')
@@ -33,7 +35,9 @@ exports.create = function start() {
 
     'use strict';
 
-    var argv = yargs.argv, lookFor = ((!argv.h)? 'Videos' : 'Handouts'), isWin = /^win/.test(process.platform), slash = (isWin) ? '\\' : '/';
+    process.title = 'mongo-edu';
+
+    var argv = yargs.argv, proxyDetails = {}, lookFor = ((!argv.h)? 'Videos' : 'Handouts'), isWin = /^win/.test(process.platform), slash = (isWin) ? '\\' : '/';
 
     if (argv.help) { return yargs.showHelp(); }
 
@@ -41,14 +45,29 @@ exports.create = function start() {
 
     if (argv.d.substr(-1) !== slash) { argv.d += slash; }
 
-    if (argv.proxy) { console.log('i'.magenta + ' Proxy Video Download: '.bold + argv.proxy.green); }
-
     validate.init(argv, function init(err, profile) {
         if (err !== null) { throw err; }
 
         configure(argv, function conf(err) {
             if (err !== null) { throw err; }
-            run(profile);
+
+            if (!argv.proxy) { return run(profile); }
+
+            proxyDetails = url.parse(argv.proxy);
+
+            console.log('i'.magenta + ' Proxy Host: '.bold + proxyDetails.hostname.cyan + ' Port: '.bold + proxyDetails.port.cyan + ' Protocol: '.bold + proxyDetails.protocol.replace(':', '').toUpperCase().cyan);
+
+            mdbvideos.checkProxy(argv.proxy, function get(err, data) {
+                if (err !== null) {
+                    (argv.verbose) ? console.log('i'.red + ' Proxy Error: '.red + err.stack) : console.log('i'.red + ' Proxy Might By Unusable.'.red);
+                }
+
+                if (data) { console.log('i'.magenta + ' ' + data); }
+                if (argv.test) { return videoHandler.checkProxyDownload(argv); }
+
+                run(profile);
+            });
+
         });
 
     });

@@ -49,6 +49,10 @@ Proxy:
   --proxy     pass proxy switch for video download
   --test      use with --proxy to test if usable
 
+Presets:
+  --save      save presets
+  --load      load presets
+
 ```
 
 ## Select and download

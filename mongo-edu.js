@@ -13,6 +13,7 @@ var pkg = require('./package'),
     validate = require('./lib/validate'),
     videoHandler = require('./lib/videos'),
     initialize = require('./lib/initialize'),
+    prompts = require('./lib/prompts'),
     yargs = optArgs.build(),
     url = require('url'),
     path = require('path'),
@@ -27,8 +28,7 @@ exports.create = function start() {
 
     console.log('\n[ ' + pkg.name.toUpperCase() + ' ' + pkg.version + ' ]\n');
 
-    var argv = yargs.argv, proxyDetails = {},
-        isWin = /^win/.test(process.platform), slash = (isWin) ? '\\' : '/';
+    var argv = yargs.argv, slash = (/^win/.test(process.platform)) ? '\\' : '/';
 
     if (argv.help) { return yargs.showHelp(); }
 
@@ -46,7 +46,7 @@ exports.create = function start() {
         } else {
             optArgs.get(function get(err, data) {
                 if (err !== null || !data.length) { return console.log('i'.magenta + ' No Presets Found.'); }
-                inquirer.prompt([{ type: 'list', name: 'preset', message: 'Select Preset To Load:', choices: data}], function prompt(answers) {
+                inquirer.prompt(prompts.loadPreset(data), function prompt(answers) {
                     optArgs.load(answers.preset, function load(err, data, status) {
                         if (err !== null || !status) { return console.log('i'.red + ' Unable To Load Preset: ' + argv.load); }
                         argv = data;
@@ -61,16 +61,11 @@ exports.create = function start() {
         validate.init(argv, function init(err, profile) {
             if (err !== null) { throw err; }
 
-            var savePrompt = [{ type: 'input', name: 'save', message: 'Missing [ --save ] Preset Name', default: '', validate: function(value) {
-                if (value !== '') { return true; }
-                return 'Please enter [ --save ] preset name';
-            }}];
-
             if (argv.save) {
                 if (typeof argv.save === 'string') {
                     optArgs.save(argv.save);
                 } else {
-                    return inquirer.prompt(savePrompt, function savePrompt(answers) {
+                    return inquirer.prompt(prompts.savePrompt, function savePrompt(answers) {
                         argv.save = answers.save;
                         optArgs.save(answers.save);
                         initAndConfigure(profile);
@@ -91,7 +86,7 @@ exports.create = function start() {
 
             if (!argv.proxy || argv.h) { return initialize(profile, argv); }
 
-            proxyDetails = url.parse(argv.proxy);
+            var proxyDetails = url.parse(argv.proxy);
 
             console.log('i'.magenta + ' Proxy Host: '.bold + proxyDetails.hostname.cyan + ' Port: '.bold + proxyDetails.port.cyan + ' Protocol: '.bold + proxyDetails.protocol.replace(':', '').toUpperCase().cyan);
 

@@ -9,16 +9,14 @@
 var pkg = require('./package'),
     mdbvideos = require('./lib/login'),
     configure = require('./lib/configure'),
-    optArgs = require('./lib/options'),
+    argsOptions = require('./lib/options'),
     validate = require('./lib/validate'),
     videoHandler = require('./lib/videos'),
     initialize = require('./lib/initialize'),
-    prompts = require('./lib/prompts'),
-    yargs = optArgs.build(),
+    yargs = argsOptions.build(),
     url = require('url'),
     path = require('path'),
-    colors = require('colors'),
-    inquirer = require('inquirer');
+    colors = require('colors');
 
 process.title = pkg.name;
 
@@ -36,51 +34,18 @@ exports.create = function start() {
 
     if (argv.d.substr(-1) !== slash) { argv.d += slash; }
 
-    if (argv.load) {
-        if (typeof argv.load === 'string') {
-            optArgs.load(argv.load, function load(err, data, status) {
-                if (err !== null || !status) { return console.log('i'.red + ' Preset: ' + argv.load.green + ' not found.'); }
-                argv = data;
-                initRun();
-            });
-        } else {
-            optArgs.get(function get(err, data) {
-                if (err !== null || !data.length) { return console.log('i'.magenta + ' No Presets Found.'); }
-                inquirer.prompt(prompts.loadPreset(data), function prompt(answers) {
-                    optArgs.load(answers.preset, function load(err, data, status) {
-                        if (err !== null || !status) { return console.log('i'.red + ' Unable To Load Preset: ' + argv.load); }
-                        argv = data;
-                        initRun();
-                    });
-                });
-            });
-        }
-    }
-
-    function initRun() {
+    function initRun(data) {
+        argv = data;
         validate.init(argv, function init(err, profile) {
             if (err !== null) { throw err; }
 
-            if (argv.save) {
-                if (typeof argv.save === 'string') {
-                    optArgs.save(argv.save);
-                } else {
-                    return inquirer.prompt(prompts.savePrompt, function savePrompt(answers) {
-                        argv.save = answers.save;
-                        optArgs.save(answers.save);
-                        initAndConfigure(profile);
-                    });
-                }
-            }
-
-            initAndConfigure(profile);
+            argsOptions.checkIfSave(argv, initAndConfigure, profile);
 
         });
     }
 
-    if (!argv.load) { return initRun(); }
-
-    function initAndConfigure(profile) {
+    function initAndConfigure(profile, data) {
+        argv = data;
         configure(argv, function conf(err) {
             if (err !== null) { throw err; }
 
@@ -108,4 +73,5 @@ exports.create = function start() {
         });
     }
 
+    argsOptions.checkIfLoad(argv, initRun);
 };

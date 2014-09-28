@@ -38,9 +38,28 @@ exports.create = function start() {
         argv = data;
         validate.init(argv, function init(err, profile) {
             if (err !== null) { throw err; }
-
             argsOptions.checkIfSave(argv, initAndConfigure, profile);
+        });
+    }
 
+    function checkProxy(profile) {
+        var proxyDetails = url.parse(argv.proxy);
+
+        console.log('i'.magenta + ' Proxy Host: '.bold + proxyDetails.hostname.cyan + ' Port: '.bold + proxyDetails.port.cyan + ' Protocol: '.bold + proxyDetails.protocol.replace(':', '').toUpperCase().cyan);
+
+        mdbvideos.checkProxy(argv.proxy, function get(err, data) {
+            if (err !== null) {
+                if (argv.verbose) {
+                    console.log('i'.red + ' Proxy Error: '.red + err.stack);
+                } else {
+                    console.log('i'.red + ' Proxy Might By Unusable.'.red);
+                }
+            }
+
+            if (data) { console.log('i'.magenta + ' ' + data); }
+            if (argv.test) { return videoHandler.checkProxyDownload(argv); }
+
+            initialize(profile, argv);
         });
     }
 
@@ -51,24 +70,7 @@ exports.create = function start() {
 
             if (!argv.proxy || argv.h) { return initialize(profile, argv); }
 
-            var proxyDetails = url.parse(argv.proxy);
-
-            console.log('i'.magenta + ' Proxy Host: '.bold + proxyDetails.hostname.cyan + ' Port: '.bold + proxyDetails.port.cyan + ' Protocol: '.bold + proxyDetails.protocol.replace(':', '').toUpperCase().cyan);
-
-            mdbvideos.checkProxy(argv.proxy, function get(err, data) {
-                if (err !== null) {
-                    if (argv.verbose) {
-                        console.log('i'.red + ' Proxy Error: '.red + err.stack);
-                    } else {
-                        console.log('i'.red + ' Proxy Might By Unusable.'.red);
-                    }
-                }
-
-                if (data) { console.log('i'.magenta + ' ' + data); }
-                if (argv.test) { return videoHandler.checkProxyDownload(argv); }
-
-                initialize(profile, argv);
-            });
+            checkProxy(profile);
 
         });
     }

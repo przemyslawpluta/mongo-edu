@@ -67,11 +67,8 @@ exports.create = function start() {
         argv = data;
         configure(argv, function conf(err) {
             if (err !== null) { throw err; }
-
             if (!argv.proxy || argv.h) { return initialize(profile, argv); }
-
             checkProxy(profile);
-
         });
     }
 

@@ -79,6 +79,7 @@ Add `-h` to download all available handouts present in the `syllabus` pages for 
 
 You can save presets for use for later. To do so just add `--save my_preset_name` at the end of your call sequence. To recall saved presets just specify `--load ..`.
 
+![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/presets.gif)
 
 ##License
 MIT

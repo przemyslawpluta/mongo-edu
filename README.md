@@ -63,15 +63,21 @@ Download all available videos from lists present in the `wiki` pages for any giv
 
 Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos. Use with `--co` to sequence the video files in order of the wiki ( based on the order of the files present in the wiki lists ) or courseware ( when used with `--cw` preserves the courseware order ).
 
-Pass `--proxy` value to download videos through specified tunnled proxy.
-
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/edu-videos.gif)
+
+### Videos via proxy
+
+You can download videos via proxy tunnel. To test if proxy is usable just pass `--proxy http://proxy_ip_address:proxy_port_number --test` to download a test video via specified proxy. If succesfull just remove `--test` and pass the rest of the required flags.
 
 ### Handouts
 
 Add `-h` to download all available handouts present in the `syllabus` pages for any given week and `--uz` to unzip files after the download.
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/edu-handouts.gif)
+
+### Save / Load presets
+
+You can save presets for use for later. To do so just add `--save my_preset_name` at the end of your call sequence. To recall saved presets just specify `--load ..`.
 
 
 ##License

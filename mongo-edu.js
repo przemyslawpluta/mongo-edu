@@ -18,13 +18,17 @@ var pkg = require('./package'),
     path = require('path'),
     colors = require('colors');
 
+var appTitle = '[ ' + pkg.name.toUpperCase() + ' ' + pkg.version + ' ]';
+
 process.title = pkg.name;
 
 exports.create = function start() {
 
     'use strict';
 
-    console.log('\n[ ' + pkg.name.toUpperCase() + ' ' + pkg.version + ' ]\n');
+    console.log('\n');
+    console.log(' ' + appTitle.black.bold.bgWhite);
+    console.log('\n');
 
     var argv = yargs.argv, slash = (/^win/.test(process.platform)) ? '\\' : '/';
 

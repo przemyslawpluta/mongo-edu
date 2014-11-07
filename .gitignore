@@ -20,3 +20,5 @@ mongo-edu.wiki
 
 node_modules
 bin/*.json
+
+lib/question.js

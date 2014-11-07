@@ -1,7 +1,7 @@
 {
   "name": "mongo-edu",
   "preferGlobal": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Przemyslaw Pluta <przemyslawplutadev@gmail.com> (http://przemyslawpluta.com)",
   "description": "Select and download videos and handouts from university.mongodb.com courses",
   "main": "./mongo-edu",
@@ -30,7 +30,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "cheerio": "~0.17.0",
+    "cheerio": "~0.18.0",
     "colors": "~1.0.3",
     "easy-table": "~0.3.0",
     "filesize": "~2.0.3",
@@ -41,7 +41,7 @@
     "mv": "~2.0.3",
     "path-extra": "~0.3.0",
     "progress": "~1.1.8",
-    "request": "~2.46.0",
+    "request": "~2.47.0",
     "request-progress": "~0.3.1",
     "rimraf": "~2.2.8",
     "unzip": "~0.1.11",

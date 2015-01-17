@@ -33,8 +33,8 @@
     "cheerio": "~0.18.0",
     "colors": "~1.0.3",
     "easy-table": "~0.3.0",
-    "filesize": "~3.0.0",
-    "glob": "~4.3.2",
+    "filesize": "~3.0.1",
+    "glob": "~4.3.5",
     "inquirer": "~0.8.0",
     "lodash": "~2.4.1",
     "mkdirp": "~0.5.0",
@@ -47,7 +47,7 @@
     "unzip": "~0.1.11",
     "which": "~1.0.8",
     "yargs": "~1.3.1",
-    "youtube-dl": "~1.7.0"
+    "youtube-dl": "~1.8.0"
   },
   "engines": {
     "node": ">= 0.8.x"

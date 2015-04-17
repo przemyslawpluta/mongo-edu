@@ -8,13 +8,13 @@ mongo-edu
 
 Select and download videos and handouts from [university.mongodb.com](https://university.mongodb.com) courses
 
-##Prerequisite
+## Prerequisite
 
 ```
 py 2.7 or 3.x
 ```
 
-##Installation
+## Installation
 
 ```
 npm install mongo-edu -g
@@ -22,7 +22,7 @@ npm install mongo-edu -g
 
 or see [detailed installation guide](https://github.com/przemyslawpluta/mongo-edu/wiki/Installation) in the wiki pages
 
-##Usage
+## Usage
 
 ```
 $ mongo-edu --help
@@ -81,5 +81,5 @@ You can save presets for use for later. To do so just add `--save my_preset_name
 
 ![screenshot](https://raw.github.com/przemyslawpluta/mongo-edu/gh-pages/images/me-presets.gif)
 
-##License
+## License
 MIT

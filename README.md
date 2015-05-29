@@ -1,6 +1,8 @@
 mongo-edu
 =========
 
+[![Join the chat at https://gitter.im/przemyslawpluta/mongo-edu](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/przemyslawpluta/mongo-edu?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![NPM](https://nodei.co/npm/mongo-edu.png?compact=true)](https://nodei.co/npm/mongo-edu/)
 
 [![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)

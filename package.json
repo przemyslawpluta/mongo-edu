@@ -41,7 +41,7 @@
     "mv": "~2.0.3",
     "path-extra": "~1.0.3",
     "progress": "~1.1.8",
-    "request": "~2.56.0",
+    "request": "~2.57.0",
     "request-progress": "~0.3.1",
     "rimraf": "~2.3.4",
     "unzip": "~0.1.11",

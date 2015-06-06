@@ -5,7 +5,7 @@ mongo-edu
 
 [![NPM version](https://badge.fury.io/js/mongo-edu.png)](http://badge.fury.io/js/mongo-edu)
 [![Dependency Status](https://gemnasium.com/przemyslawpluta/mongo-edu.png)](https://gemnasium.com/przemyslawpluta/mongo-edu)
-[![Gitter](https://badges.gitter.im/przemyslawpluta/mongo-edu.svg)](https://gitter.im/przemyslawpluta/mongo-edu?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/przemyslawpluta/mongo-edu?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Select and download videos and handouts from [university.mongodb.com](https://university.mongodb.com) courses
 

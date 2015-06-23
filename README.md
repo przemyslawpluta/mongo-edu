@@ -60,7 +60,7 @@ Presets:
 
 ### Videos and closed captions
 
-Download all available videos from lists present in the `wiki` pages for any given week. If no lists are present in `wiki` add `--cw` to search through the main courseware pages.
+Download all available videos from lists present in the `wiki` pages for any given week. If no lists are present in `wiki` add `--cw` to search through the main courseware pages; make sure your [user profile](https://university.mongodb.com/edit_profile) video preferences are set to youtube.
 
 Add `--cc` to download closed captions with the videos and `--hq` to get high quality videos. Use with `--co` to sequence the video files in order of the wiki ( based on the order of the files present in the wiki lists ) or courseware ( when used with `--cw` preserves the courseware order ).
 

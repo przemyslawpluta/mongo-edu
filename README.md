@@ -38,7 +38,7 @@ Options:
 Videos:
   --cw        switch from wiki video lists (default) to courseware
   --cwd       same as --cw and dumps list of videos to file in -d
-  --co        sequence video files in order of the courseware
+  --co        arrange video files in correct order of the courseware
   --cc        get closed captions
   --hq        get high quality videos
 

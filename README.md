@@ -9,6 +9,10 @@ mongo-edu
 
 Select and download videos and handouts from [university.mongodb.com](https://university.mongodb.com) courses
 
+## Apps
+
+Depending on your needs you can download MongoDB University [ios](https://itunes.apple.com/us/app/mongodb-university/id1009365760?mt=8) or [android](https://play.google.com/store/apps/details?id=com.mongodb.university.mongou) app.
+
 ## Prerequisite
 
 ```

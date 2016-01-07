@@ -60,9 +60,15 @@ var ytdl = module.exports = function(videoUrl, args, options) {
     });
 
     req.on('response', function(res) {
-      if (options && options.start > 0 && res.statusCode == 416) {
+
+      var size = parseInt(res.headers['content-length'], 10);
+      if (size) {
+        item.size = size;
+      }
+
+      if (options && options.start > 0 && res.statusCode === 416) {
         // the file that is being resumed is complete.
-        stream.emit('end');
+        stream.emit('complete', item);
         return;
       }
 
@@ -71,11 +77,8 @@ var ytdl = module.exports = function(videoUrl, args, options) {
         return;
       }
 
-      var size = parseInt(res.headers['content-length'], 10);
-      if (size) {
-        item.size = size;
-      }
       stream.emit('info', item);
+
     });
     stream.resolve(req);
   });

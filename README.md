@@ -38,6 +38,7 @@ Options:
   --py        pass switch to point to Python
   --ncc       no check certificate for py3.x < py3.4.x
   --verbose   print debug info
+  --retry     retry time in seconds if connection / download fails
 
 Videos:
   --cw        switch from wiki video lists (default) to courseware

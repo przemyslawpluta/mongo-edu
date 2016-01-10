@@ -1,7 +1,7 @@
 {
   "name": "mongo-edu",
   "preferGlobal": true,
-  "version": "0.2.51",
+  "version": "0.2.52",
   "author": "Przemyslaw Pluta <przemyslawplutadev@gmail.com> (http://przemyslawpluta.com)",
   "description": "Select and download videos and handouts from university.mongodb.com courses",
   "main": "./mongo-edu",
@@ -36,6 +36,7 @@
     "easy-table": "~1.0.0",
     "extract-zip": "~1.4.0",
     "filesize": "~3.1.5",
+    "get-youtube-id": "~1.0.0",
     "glob": "~6.0.3",
     "inquirer": "~0.11.1",
     "lodash": "~3.10.1",

@@ -45,6 +45,7 @@ Videos:
   --cwd       same as --cw and dumps list of videos to file in -d
   --co        arrange video files in correct order of the courseware
   --cc        get closed captions
+  --cco       get only closed captions without downloading videos
   --hq        get high quality videos
 
 Handouts:

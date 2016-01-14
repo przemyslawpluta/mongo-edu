@@ -305,6 +305,9 @@ ytdl.getSubs = function(url, options, callback) {
   if (options.lang) {
     args.push('--sub-lang=' + options.lang);
   }
+  if (!options.warrning) {
+    args.push('--no-warnings');
+  }
   call(url, args, [], { cwd: options.cwd }, function(err, data) {
     if (err) return callback(err);
 

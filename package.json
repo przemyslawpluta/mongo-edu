@@ -39,7 +39,7 @@
     "get-youtube-id": "~1.0.0",
     "glob": "~6.0.3",
     "inquirer": "~0.11.2",
-    "lodash": "~3.10.1",
+    "lodash": "~4.0.0",
     "mkdirp": "~0.5.1",
     "moment": "~2.11.1",
     "mv": "~2.1.1",
@@ -50,7 +50,7 @@
     "request-progress": "~1.0.2",
     "rimraf": "~2.5.0",
     "which": "~1.2.1",
-    "yargs": "~3.31.0",
+    "yargs": "~3.32.0",
     "youtube-dl": "~1.10.5"
   },
   "engines": {
